@@ -1,0 +1,46 @@
+{
+  "author": {
+    "name": "Silas B. Domingos",
+    "email": "hello@balmante.eti.br",
+    "url": "https://balmante.eti.br"
+  },
+  "name": "@singleware/ui-tabs",
+  "description": "Singleware UI tabs package.",
+  "license": "MIT",
+  "version": "1.0.16",
+  "main": "release/source/index.js",
+  "types": "release/types/index.d.ts",
+  "keywords": [
+    "tabs",
+    "ui tabs",
+    "user interface",
+    "shadow dom",
+    "browser"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/singleware/ui-tabs"
+  },
+  "dependencies": {
+    "@singleware/class": "^1.1.19",
+    "@singleware/jsx": "^1.0.32",
+    "@singleware/ui-control": "^1.1.10"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "typescript": "^3.8.3"
+  },
+  "prettier": {
+    "printWidth": 140,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "semi": true
+  },
+  "scripts": {
+    "build": "npm run make && npm run update",
+    "make": "tsc",
+    "update": "npm run update-container && npm run update-page",
+    "update-container": "cp -Rf ./source/container/*.d.ts ./release/types/container",
+    "update-page": "cp -Rf ./source/page/*.d.ts ./release/types/page"
+  }
+}
